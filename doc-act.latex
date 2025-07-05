@@ -1,0 +1,288 @@
+\documentclass[11pt, a4paper, landscape]{article} % AJOUTÉ 'landscape' ici
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry} % Marges plus réduites pour le paysage
+\usepackage{fancyhdr} % Pour en-têtes et pieds de page
+\usepackage{lastpage} % Pour le numéro de la dernière page
+\usepackage{setspace} % Pour l'interligne
+\usepackage{tabularx} % Pour des tableaux avec des colonnes de largeur fixe
+\usepackage{enumitem} % Pour personnaliser les listes
+\usepackage{xcolor} % Pour des couleurs
+\usepackage{hologo} % Pour le logo LaTeX
+\usepackage{array} % Pour plus de contrôle sur les tableaux
+\usepackage{ragged2e} % Pour \Justifying
+\usepackage{titlesec} % Pour personnaliser les titres de section
+
+% --- Paramètres de style ---
+\onehalfspacing % Interligne de 1.5
+
+% En-tête et pied de page
+\pagestyle{fancy}
+\fancyhf{} % Efface tous les en-têtes et pieds de page par défaut
+\fancyhead[L]{\textbf{Planification d'Évaluation SVT}}
+\fancyhead[R]{\textbf{Page \thepage\ sur \pageref{LastPage}}}
+\fancyfoot[C]{\textit{Document Pédagogique - \hologo{LaTeX}}}
+\renewcommand{\headrulewidth}{0.6pt} % Ligne plus épaisse pour l'en-tête
+\renewcommand{\footrulewidth}{0.6pt} % Ligne plus épaisse pour le pied de page
+
+% Couleurs personnalisées
+\definecolor{mainblue}{RGB}{23, 107, 135} % Bleu profond
+\definecolor{secondarygreen}{RGB}{75, 139, 99} % Vert forêt
+\definecolor{accentorange}{RGB}{255, 159, 28} % Orange vif
+\definecolor{lightgray}{RGB}{240, 240, 240} % Gris très clair pour les fonds de ligne
+\definecolor{darkgray}{RGB}{100, 100, 100} % Gris foncé pour le texte secondaire
+
+% Titres de section stylisés
+\titleformat{\section}{\centering\Large\bfseries\color{mainblue}\vspace{1em}}{}{0em}{\MakeUppercase}
+\titlespacing*{\section}{0pt}{1.5em}{1em} % Espacement avant/après section
+
+\titleformat{\subsection}{\large\bfseries\color{secondarygreen}\vspace{0.5em}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{1em}{0.5em}
+
+\titleformat{\subsubsection}{\normalfont\bfseries\color{mainblue}}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.4em}
+
+% Nouvelle commande pour les encadrés d'information (plus stylisée)
+\usepackage[most]{tcolorbox}
+\newtcolorbox{infoframe}[1]{
+    colback=mainblue!5!white, % Fond très légèrement teinté
+    colframe=mainblue!75!black, % Bordure bleue foncée
+    fonttitle=\bfseries\color{mainblue}\large,
+    title=#1,
+    boxrule=1pt, % Bordure un peu plus épaisse
+    arc=6pt, % Coins plus arrondis
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    before skip=1.5em, after skip=1.5em,
+    boxsep=4pt, % Espacement interne
+    shadow={2mm}{-2mm}{0mm}{mainblue!30!white} % Ombre légère pour la profondeur
+}
+
+% Style pour les listes (pour éviter les espacements excessifs)
+\setlist[itemize]{noitemsep, topsep=0.2em, partopsep=0em, leftmargin=1.5em}
+\setlist[enumerate]{noitemsep, topsep=0.2em, partopsep=0em, leftmargin=1.8em}
+
+\begin{document}
+
+% --- Fiche 1 : Fiche Pédagogique Technique (Tableau Récapitulatif) ---
+\section*{Fiche 1 : Fiche Pédagogique Technique (Tableau Récapitulatif)}
+\begin{center}
+    \rule{0.8\textwidth}{1.5pt} % Ligne décorative plus épaisse
+\end{center}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \rowcolor{mainblue!20} \multicolumn{2}{|c|}{\textbf{\Large Données Générales de l'Évaluation}} \\
+    \hline
+    \textbf{Discipline} & Sciences de la Vie et de la Terre (SVT) \\
+    \textbf{Niveau Scolaire} & 1\textsuperscript{ère} Année Bac Sciences Expérimentales (Maroc) \\
+    \textbf{Unité / Module} & Consommation de la matière organique et flux d'énergie \\
+    \textbf{Chapitre} & La Photosynthèse : mécanismes et facteurs \\
+    \textbf{Type d'Évaluation} & Formative (Contrôle des acquis et ajustement) \\
+    \textbf{Durée Estimée} & 45 minutes \\
+    \textbf{Période de Réalisation} & Après les séances de cours sur les mécanismes de la photosynthèse et ses conditions. \\
+    \textbf{Objectifs Pédagogiques} & \begin{itemize}
+        \item Identifier les lieux et conditions de la photosynthèse.
+        \item Décrire les phases de la photosynthèse (photochimique et de Calvin).
+        \item Expliquer le rôle des pigments chlorophylliens.
+        \item Interpréter des résultats expérimentaux liés à la photosynthèse.
+        \item Utiliser un vocabulaire scientifique précis.
+    \end{itemize} \\
+    \textbf{Compétences Évaluées} & \begin{itemize}
+        \item \textbf{Spécifique} : Analyser des documents scientifiques pour en extraire des informations pertinentes sur des phénomènes biologiques.
+        \item \textbf{Générales} : Esprit critique, Communication scientifique, Résolution de problèmes.
+    \end{itemize} \\
+    \textbf{Connaissances Évaluées} & \begin{itemize}
+        \item Chloroplastes, pigments chlorophylliens, spectre d'absorption/action.
+        \item Phase photochimique (photolyse de l'eau, formation ATP/NADPH).
+        \item Phase de Calvin (cycle du carbone, utilisation ATP/NADPH, synthèse glucides).
+        \item Facteurs influençant la photosynthèse (lumière, CO\textsubscript{2}, température).
+    \end{itemize} \\
+    \textbf{Capacités / Habiletés} & \begin{itemize}
+        \item Interpréter des graphiques et schémas.
+        \item Rédiger une explication structurée.
+        \item Modéliser des processus biologiques.
+    \end{itemize} \\
+    \textbf{Modalités de l'Évaluation} & Épreuve écrite individuelle (Questions à choix multiples, restitution organisée de connaissances, analyse de documents). \\
+    \textbf{Ressources Matérielles} & Sujet d'évaluation (papier), stylo, règle. \\
+    \textbf{Critères d'Évaluation} & \begin{itemize}
+        \item \textbf{Compréhension} : Justesse des définitions et explications.
+        \item \textbf{Analyse} : Pertinence de l'interprétation des données.
+        \item \textbf{Synthèse} : Cohérence et structure de la réponse rédigée.
+        \item \textbf{Rigueur} : Utilisation du vocabulaire scientifique approprié.
+    \end{itemize} \\
+    \hline
+\end{tabularx}
+\vspace{1.5cm} % Espacement plus généreux
+
+% --- Fiche 2 : Scénario Pédagogique Détaillé ---
+\section*{Fiche 2 : Scénario Pédagogique Détaillé}
+\begin{center}
+    \rule{0.8\textwidth}{1.5pt} % Ligne décorative plus épaisse
+\end{center}
+
+\begin{infoframe}{Déroulement de l'activité d'évaluation}
+    Ce scénario décrit les étapes clés pour la mise en œuvre de l'activité d'évaluation.
+\end{infoframe}
+
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{2.5cm}|X|X|}
+    \hline
+    \rowcolor{mainblue!20} \textbf{Phase} & \textbf{Activités de l'Enseignant} & \textbf{Activités de l'Élève} \\
+    \hline
+    \textbf{I. Introduction et Consignes} (5 min) &
+    \begin{itemize}
+        \item Rappelle le contexte de l'évaluation formative (objectif : vérifier les acquis et identifier les difficultés).
+        \item Distribue le sujet d'évaluation et la grille d'auto-évaluation (si utilisée).
+        \item Lit et explique clairement les consignes générales (temps alloué, barème, propreté de la copie, interdiction de communiquer).
+        \item Répond aux questions éventuelles des élèves sur la forme de l'évaluation.
+    \end{itemize} &
+    \begin{itemize}
+        \item Écoute attentivement les consignes.
+        \item Pose des questions pour clarifier les points ambigus.
+        \item Prépare son matériel.
+    \end{itemize} \\
+    \hline
+    \textbf{II. Réalisation de l'Évaluation} (35 min) &
+    \begin{itemize}
+        \item Surveille activement la classe pour s'assurer du bon déroulement.
+        \item Répond aux questions de clarification sur le sujet (si nécessaire, sans donner la réponse).
+        \item Gère le temps : annonce le temps restant à mi-parcours et 5 minutes avant la fin.
+    \end{itemize} &
+    \begin{itemize}
+        \item Lit l'intégralité du sujet.
+        \item Gère son temps pour répondre à toutes les questions.
+        \item Répond aux questions de manière individuelle et autonome.
+        \item Relit ses réponses.
+    \end{itemize} \\
+    \hline
+    \textbf{III. Clôture et Collecte} (5 min) &
+    \begin{itemize}
+        \item Annonce la fin du temps.
+        \item Demande aux élèves de poser les stylos.
+        \item Collecte les copies de manière ordonnée.
+        \item Remercie les élèves pour leur travail.
+    \end{itemize} &
+    \begin{itemize}
+        \item Arrête d'écrire.
+        \item Remet sa copie.
+        \item Peut poser des questions sur la correction ou le débriefing futur.
+    \end{itemize} \\
+    \hline
+    \rowcolor{secondarygreen!20} \multicolumn{3}{|c|}{\textbf{\Large Post-Évaluation (Hors Scénario Direct)}} \\
+    \hline
+    \textbf{Correction} & \begin{itemize}
+        \item Corrige les copies selon la grille d'évaluation et le barème.
+        \item Identifie les erreurs récurrentes et les points de difficulté.
+    \end{itemize} & - \\
+    \textbf{Retour Pédagogique} & \begin{itemize}
+        \item Propose une correction collective et/ou individuelle.
+        \item Clarifie les notions non maîtrisées.
+        \item Adapte la suite de la progression en fonction des résultats (remédiation, activités complémentaires).
+    \end{itemize} & \begin{itemize}
+        \item Prend connaissance de sa note et des corrections.
+        \item Participe au débriefing.
+        \item Cherche à comprendre ses erreurs.
+    \end{itemize} \\
+    \hline
+\end{tabularx}
+\vspace{1.5cm}
+
+% --- Fiche 3 : Contenu à Fournir aux Élèves ---
+\section*{Fiche 3 : Contenu à Fournir aux Élèves}
+\begin{center}
+    \rule{0.8\textwidth}{1.5pt} % Ligne décorative plus épaisse
+\end{center}
+
+\subsection*{Sujet de l'Activité d'Évaluation}
+\begin{infoframe}{Évaluation Formative : La Photosynthèse, mécanismes et conditions}
+    \textbf{Discipline :} Sciences de la Vie et de la Terre (SVT) \\
+    \textbf{Niveau :} 1\textsuperscript{ère} Année Bac Sciences Expérimentales \\
+    \textbf{Durée :} 45 minutes \\
+    \textbf{Barème :} 20 points
+\end{infoframe}
+
+\subsubsection*{Exercice 1 : Restitution Organisée de Connaissances (8 points)}
+La photosynthèse est un processus vital. En utilisant vos connaissances, expliquez en quelques lignes les étapes clés de la phase photochimique de la photosynthèse, en précisant les éléments impliqués et les produits formés.
+
+\subsubsection*{Exercice 2 : Analyse Documentaire et Interprétation (7 points)}
+Document : Graphique montrant l'influence de l'intensité lumineuse et de la concentration en CO\textsubscript{2} sur l'intensité de la photosynthèse chez une plante.
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{example-image-a} % Remplacez par votre image réelle (ex: mon_graphique.png)
+    \vspace{0.5em}
+    \captionof{figure}{Figure 1 : Influence de l'intensité lumineuse et du CO\textsubscript{2} sur la photosynthèse.}
+\end{center}
+\vspace{1em} % Espacement après la figure
+
+\begin{enumerate}
+    \item Décrivez l'évolution de l'intensité de la photosynthèse en fonction de l'intensité lumineuse, pour une concentration en CO\textsubscript{2} donnée. (2 pts)
+    \item Comparez l'influence de la concentration en CO\textsubscript{2} à faible et à forte intensité lumineuse. (3 pts)
+    \item Déduisez l'intérêt de la maîtrise de ces facteurs dans les cultures sous serre. (2 pts)
+\end{enumerate}
+
+\subsubsection*{Exercice 3 : Définition et Schéma (5 points)}
+\begin{enumerate}
+    \item Définissez la notion de "spectre d'action de la photosynthèse". (2 pts)
+    \item Réalisez un schéma simple et légendé d'un chloroplaste, en indiquant les principaux compartiments où se déroulent les phases de la photosynthèse. (3 pts)
+\end{enumerate}
+
+\newpage % Force une nouvelle page pour la grille d'évaluation
+
+\subsection*{Grille d'Évaluation (pour l'enseignant et/ou l'auto-évaluation de l'élève)}
+
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.8cm}|X|c|c|X|} % Ajustement des colonnes pour la grille
+    \hline
+    \rowcolor{secondarygreen!20} \textbf{Ex.} & \textbf{Critères d'Évaluation Détaillés} & \textbf{Points} & \textbf{Atteint (Oui/Non)} & \textbf{Commentaires} \\
+    \hline
+    \multicolumn{5}{|c|}{\textbf{Exercice 1 : Restitution Organisée de Connaissances (8 points)}} \\
+    \hline
+    1 & Identification des étapes de la phase photochimique (absorption lumière, photolyse, chaîne de transport). & 3 & & \\
+    & Précision des éléments impliqués (chlorophylle, thylakoïdes, H\textsubscript{2}O). & 2 & & \\
+    & Mention correcte des produits formés (ATP, NADPH, O\textsubscript{2}). & 3 & & \\
+    \hline
+    \multicolumn{5}{|c|}{\textbf{Exercice 2 : Analyse Documentaire et Interprétation (7 points)}} \\
+    \hline
+    2.1 & Description juste de l'évolution de la photosynthèse en fonction de l'intensité lumineuse. & 2 & & \\
+    2.2 & Comparaison pertinente de l'influence du CO\textsubscript{2} à différentes intensités lumineuses. & 3 & & \\
+    2.3 & Déduction logique de l'intérêt agronomique dans les cultures sous serre. & 2 & & \\
+    \hline
+    \multicolumn{5}{|c|}{\textbf{Exercice 3 : Définition et Schéma (5 points)}} \\
+    \hline
+    3.1 & Définition correcte et complète du spectre d'action. & 2 & & \\
+    3.2 & Schéma clair et lisible du chloroplaste. & 1 & & \\
+    & Localisation et légendage corrects des compartiments (stroma, thylakoïdes, membrane interne/externe). & 2 & & \\
+    \hline
+    \rowcolor{lightgray} \multicolumn{3}{|r|}{\textbf{Total des Points :}} & \textbf{20} & \\
+    \hline
+\end{tabularx}
+\vspace{1.5cm}
+
+\subsection*{Corrigé Type (pour l'enseignant - non fourni à l'élève directement)}
+
+\subsubsection*{Exercice 1 : Corrigé (8 points)}
+La phase photochimique (ou claire) de la photosynthèse se déroule au niveau des membranes des thylakoïdes du chloroplaste, et nécessite la lumière. Les pigments chlorophylliens, organisés en photosystèmes, absorbent l'énergie lumineuse. Cette énergie est utilisée pour la photolyse de l'eau (H\textsubscript{2}O $\rightarrow$ O\textsubscript{2} + 2H\textsuperscript{+} + 2e\textsuperscript{-}). Les électrons libérés sont transportés le long d'une chaîne de transport, permettant la réduction du NADP\textsuperscript{+} en NADPH (pouvoir réducteur) et la phosphorylation de l'ADP en ATP (énergie). L'O\textsubscript{2} est libéré.
+
+\subsubsection*{Exercice 2 : Corrigé (7 points)}
+\begin{enumerate}
+    \item À faible intensité lumineuse, l'intensité de la photosynthèse augmente proportionnellement avec la lumière jusqu'à un plateau. Au-delà d'une certaine intensité, la lumière n'est plus le facteur limitant, et l'intensité de la photosynthèse se stabilise.
+    \item À faible intensité lumineuse, l'augmentation de la concentration en CO\textsubscript{2} a peu ou pas d'effet sur l'intensité de la photosynthèse, car c'est la lumière qui est le facteur limitant (on ne peut pas utiliser plus de CO\textsubscript{2} si l'énergie lumineuse est insuffisante). En revanche, à forte intensité lumineuse, une augmentation de la concentration en CO\textsubscript{2} entraîne une nette augmentation de l'intensité de la photosynthèse, montrant que le CO\textsubscript{2} devient alors le facteur limitant.
+    \item Dans les cultures sous serre, la maîtrise de ces facteurs permet d'optimiser la croissance des plantes. On peut augmenter l'intensité lumineuse (éclairage artificiel) et/ou la concentration en CO\textsubscript{2} (injection de CO\textsubscript{2}) pour maximiser la production de matière organique et donc le rendement des cultures. Il faut trouver un équilibre pour ne pas gaspiller des ressources.
+\end{enumerate}
+
+\subsubsection*{Exercice 3 : Corrigé (5 points)}
+\begin{enumerate}
+    \item Le \textbf{spectre d'action de la photosynthèse} représente l'efficacité de la photosynthèse en fonction de la longueur d'onde de la lumière absorbée. Il montre que la photosynthèse est maximale dans le bleu-violet et le rouge, et minimale dans le vert (qui est réfléchi).
+    \item Schéma d'un chloroplaste :
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{example-image-b} % Remplacez par votre image réelle (ex: schema_chloroplaste.png)
+        \vspace{0.5em}
+        \captionof{figure}{Schéma simplifié d'un chloroplaste}
+    \end{center}
+    \textit{Légendes clés : Membrane externe, Membrane interne, Stroma (siège de la phase de Calvin), Granum (pile de thylakoïdes), Thylakoïde (siège de la phase photochimique), Lumen du thylakoïde.}
+\end{enumerate}
+
+\end{document}

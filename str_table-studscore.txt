@@ -1,0 +1,23 @@
+CREATE TABLE student_scores (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY, -- ID auto-généré comme clé primaire
+    student_code VARCHAR UNIQUE NOT NULL,         -- Colonne unique pour les codes élèves
+    cc1 INTEGER,                                  -- Note du contrôle surveillé 1
+    cc2 INTEGER,                                  -- Note du contrôle surveillé 2
+    cc3 INTEGER,                                  -- Note du contrôle surveillé 3
+    c_act INTEGER,                                -- Note des activités en classe
+    created_at TIMESTAMP DEFAULT NOW(),           -- Date d'ajout des données
+    updated_at TIMESTAMP DEFAULT NOW()            -- Dernière mise à jour des données
+);
+
+CREATE TABLE student_progress (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY, -- Identifiant unique auto-généré
+    student_code VARCHAR UNIQUE NOT NULL,         -- Code unique de l'élève (clé étrangère vers `students`)
+    absences INTEGER DEFAULT 0,                   -- Nombre total d'absences
+    assiduity_rate FLOAT DEFAULT 0,               -- Taux d'assiduité (%)
+    workbook INTEGER DEFAULT 0,                   -- Évaluation du cahier/notes liées au workbook
+    extra_activities TEXT,                        -- Description des activités hors classe
+    observations TEXT,                            -- Remarques générales (santé, comportement, etc.)
+    created_at TIMESTAMP DEFAULT NOW(),           -- Date d'ajout
+    updated_at TIMESTAMP DEFAULT NOW(),           -- Dernière mise à jour
+    CONSTRAINT fk_student_code FOREIGN KEY (student_code) REFERENCES students(student_code)
+);

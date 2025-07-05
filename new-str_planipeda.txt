@@ -1,0 +1,120 @@
+src/
+ └── components/
+      └── planipeda/
+           ├── Editor/
+           │    ├── SequenceEditor.tsx
+           │    ├── ActivityEditor.tsx
+           │    └── EvaluationEditor.tsx
+           ├── DocumentGenerator.tsx
+           ├── Library.tsx       // Ressources partagées
+           └── Timeline.tsx      // Visualisation temporelle
+//========
+Carte de fonctionnalité proposée
+[Planipeda Dashboard]
+     |
+     |--> [Séquences]
+     |        |--> [Ajouter Activité]
+     |        |--> [Ajouter Grain d'évaluation]
+     |
+     |--> [Activités pédagogiques]
+     |
+     |--> [Ressources / Bibliothèque]
+     |
+     |--> [Différenciation]
+     |
+     |--> [Générateur IA de progression]
+     |
+     |--> [Document PDF / HTML exporté]
+//========================================
+/**** Nouvelle structure *****\
+src/
+├── components/
+│   └── planipeda/
+│       ├── Sequences/
+│       │   ├── index.tsx
+│       │   ├── SequenceEditor.tsx
+│       │   ├── SequenceList.tsx
+│       │   ├── hooks/
+│       │   │   └── useSequenceData.ts
+│       │   └── types/
+│       │       └── sequence.ts
+│       ├── Activities/
+│       │   ├── index.tsx
+│       │   ├── ActivityEditor.tsx
+│       │   ├── ActivityList.tsx
+│       │   ├── hooks/
+│       │   │   └── useActivityData.ts
+│       │   └── types/
+│       │       └── activity.ts
+│       ├── Resources/
+│       │   ├── index.tsx
+│       │   ├── ResourceManager.tsx
+│       │   ├── hooks/
+│       │   │   └── useResourceData.ts
+│       │   └── types/
+│       │       └── resource.ts
+│       ├── Evaluation/
+│       │   ├── index.tsx
+│       │   ├── EvaluationDashboard.tsx
+│       │   ├── hooks/
+│       │   │   └── useEvaluationData.ts
+│       │   └── types/
+│       │       └── evaluation.ts
+│       ├── AIPlanning/
+│       │   ├── index.tsx
+│       │   ├── AIPlanner.tsx
+│       │   ├── hooks/
+│       │   │   └── useAIPlanning.ts
+│       │   └── types/
+│       │       └── aiPlanning.ts
+│       ├── StudentAnalytics/
+│       │   ├── index.tsx
+│       │   ├── AnalyticsDashboard.tsx
+│       │   ├── hooks/
+│       │   │   └── useAnalyticsData.ts
+│       │   └── types/
+│       │       └── analytics.ts
+│       └── Differentiation/
+│           ├── index.tsx
+│           ├── DifferentiationManager.tsx
+│           ├── hooks/
+│           │   └── useDifferentiationData.ts
+│           └── types/
+│               └── differentiation.ts
+├── pages/
+│   └── Planipeda.tsx
+└── utils/
+    └── api.ts
+/////////////////////////////////////////////////////
+
+src/
+│
+├── components/
+│   └── planipeda/
+│       └── Sequences/
+│           ├── SequenceManager.tsx        # Le composant gérant les séquences
+│           ├── types/
+│           │   └── sequence.ts            # Définition du type Sequence
+│           └── SequenceEditor.tsx         # Composant d'édition d'une séquence
+│
+├── hooks/
+│   └── useSequenceData.ts                # Le hook gérant l'état des séquences
+│
+└── services/
+    └── sequenceService.ts                # Le service pour les appels API sur les séquences
+
+
+src/
+├── components/
+│   └── planipeda/
+│       ├── Sequences/
+│       │   ├── index.tsx
+│       │   ├── SequenceEditor.tsx
+│       │   ├── SequenceList.tsx
+│       │   ├── SequenceManager.tsx        # Le composant gérant les séquences
+│       │   ├── hooks/
+│       │   │   └── useSequenceData.ts
+│           └── types/
+│               └── sequence.ts
+└── services/
+    └── sequenceService.ts                # Le service pour les appels API sur les séquences

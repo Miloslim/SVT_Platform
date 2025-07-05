@@ -1,0 +1,37 @@
+src/
+├── components/            # Tous les composants React réutilisables
+│   ├── students/          # Composants liés à la gestion des élèves
+│   │   ├── StudentProfile.tsx   # Profil d'un élève
+│   │   ├── GestionEleve.tsx     # Gestion des élèves
+│   │   ├── StudentTracking.tsx  # Suivi des élèves
+│   │   ├── AbsencesModal.tsx    # Modale pour les absences
+│   │   ├── StudentList.tsx      # Composant pour afficher une liste d'élèves
+│   ├── notes/             # Composants liés à la gestion des notes
+│   │   ├── GestionNotes.tsx     # Gestion des notes
+│   ├── common/            # Composants génériques/réutilisables
+│   │   ├── Header.tsx           # En-tête commun
+│   │   ├── Modal.tsx            # Modale générique
+│   │   ├── SearchBar.tsx        # Barre de recherche
+│   │   ├── LoadingSpinner.tsx   # Indicateur de chargement
+│   │   ├── Calendar.tsx         # Composant pour le calendrier
+│   │   ├── Pagination.tsx       # Pagination générique
+├── layouts/               # Composants d'agencement (layout)
+│   ├── MainLayout.tsx           # Layout principal
+├── backend/               # Logique de backend et configuration Supabase
+│   ├── config/
+│   │   ├── supabase.ts          # Connexion Supabase
+│   ├── utils/
+│   │   ├── apiHelpers.ts        # Fonctions d'assistance API
+│   │   ├── validation.ts        # Validations communes
+├── hooks/                 # Hooks React personnalisés
+│   ├── useStudentsData.ts       # Hook pour récupérer des données élèves
+│   ├── useFetch.ts              # Hook générique pour les requêtes API
+├── context/               # Context API pour la gestion globale des états
+│   ├── StudentsContext.tsx      # Contexte pour les élèves
+│   ├── NotesContext.tsx         # Contexte pour les notes
+├── pages/                 # Pages principales du projet
+│   ├── ClassManagement.tsx      # Page principale de gestion des classes
+│   ├── Dashboard.tsx            # Page principale (tableau de bord)
+└── styles/                # Fichiers de style
+    ├── global.css               # Styles globaux
+    ├── variables.css            # Variables CSS communes

@@ -1,0 +1,11 @@
+import React, { useEffect } from 'react';
+
+function StudentList() {
+  useEffect(() => {
+    console.log('Composant StudentList monté !');
+  }, []);
+
+  return <div>Voici la liste des élèves</div>;
+}
+
+export default StudentList;

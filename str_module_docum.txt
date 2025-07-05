@@ -1,0 +1,68 @@
+src/
+├── components/
+│   └── planipeda/
+│       ├── DashboardOverview.tsx               ✅ existant
+│       ├── PlanningTable.tsx                   ✅ à faire évoluer
+│       ├── EntityQuickLinks.tsx                ✅ existant
+│       ├── FichePedagogiqueCard.tsx            🆕 fiche individuelle (utilisée dans PlanningTable)
+│       ├── ScenarioEditor/
+│       │   ├── FicheEditor.tsx                 🆕 éditeur principal (drag & drop)
+│       │   ├── SequenceEditor.tsx              🆕 éditeur de séquence
+│       │   ├── ActivityEditor.tsx              🆕 éditeur d'activité
+│       │   ├── EvaluationEditor.tsx            🆕 éditeur d’évaluation
+│       │   └── ObjectivesSelector.tsx          🆕 sélection d’objectifs
+│       └── ResourceLibrary.tsx                 🆕 bibliothèque de ressources
+│
+├── pages/
+│   ├── Planipeda.tsx                           ✅ existant
+│   ├── CreateFichePage.tsx                     🆕 page : nouvelle fiche
+│   ├── EditFichePage.tsx                       🆕 page : modification fiche
+│   └── PreviewFichePage.tsx                    🆕 page : prévisualisation/export
+│
+├── data/
+│   └── pedagogicalStructure.ts                 🆕 niveaux > options > unités > chapitres
+│
+├── styles/
+│   └── planipeda-styles.css                    ✅ existant
+
+📁 src/components/planipeda/
+| Fichier                        | Fonction                                                                                                                                                                                                                                  |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **DashboardOverview\.tsx**     | ✅ Affiche un résumé global du module : nombre de fiches, progression générale, alertes ou rappels (ex. fiches incomplètes). Peut contenir des boutons d'accès rapide.                                                                     |
+| **PlanningTable.tsx**          | ✅ Affiche la liste des **fiches pédagogiques** (planifications par chapitre ou unité). Chaque ligne ou carte résume une fiche avec actions : modifier, prévisualiser, supprimer. Doit charger les données via `FichePedagogiqueCard.tsx`. |
+| **EntityQuickLinks.tsx**       | ✅ Fournit un accès rapide aux **entités pédagogiques** existantes : chapitres, objectifs, ressources. Sert de passerelle entre les données structurelles et la scénarisation.                                                             |
+| **FichePedagogiqueCard.tsx**   | 🆕 Composant visuel qui représente une **fiche pédagogique individuelle** (niveau, option, chapitre, état, % progression). Utilisé dans `PlanningTable`.                                                                                  |
+| **ScenarioEditor/**            | 🧱 Contient les outils d'édition pour construire une fiche pédagogique modulaire (scénario). Chaque éditeur correspond à un composant de la fiche.                                                                                        |
+| ├── **FicheEditor.tsx**        | 🆕 Éditeur principal de fiche pédagogique : interface par sections (généralités, séquences, évaluation, ressources). Support du **glisser-déposer** pour organiser les séquences.                                                         |
+| ├── **SequenceEditor.tsx**     | 🆕 Gère une **séquence pédagogique** : titre, objectifs associés, durée, activités. Peut avoir un éditeur WYSIWYG ou formulaire structuré.                                                                                                |
+| ├── **ActivityEditor.tsx**     | 🆕 Permet d’ajouter une **activité d’apprentissage** (introduction, consignes, matériel, production attendue). Peut être liée à des ressources.                                                                                           |
+| ├── **EvaluationEditor.tsx**   | 🆕 Bloc pour intégrer une **évaluation formative ou sommative** dans la fiche. Peut inclure type, critère, barème, activité évaluée.                                                                                                      |
+| └── **ObjectivesSelector.tsx** | 🆕 Composant pour **lier des objectifs pédagogiques** à une séquence ou une activité, via sélection dans la hiérarchie : niveau > option > unité > chapitre > objectif.                                                                   |
+| **ResourceLibrary.tsx**        | 🆕 Interface pour gérer les **ressources pédagogiques** : fichiers, documents, images, vidéos… pouvant être liés à une activité, une séquence ou un objectif. Supporte ajout/suppression/prévisualisation.                                |
+📁 src/pages/
+| Fichier                  | Fonction                                                                                                                                                              |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Planipeda.tsx**        | ✅ Page d’accueil du module. Présente le tableau de bord (`DashboardOverview`), la table de planification (`PlanningTable`) et les accès rapides (`EntityQuickLinks`). |
+| **CreateFichePage.tsx**  | 🆕 Page pour **créer une nouvelle fiche pédagogique**. Charge `FicheEditor.tsx` en mode vide. Inclut sauvegarde brouillon, validation, publication.                   |
+| **EditFichePage.tsx**    | 🆕 Page pour **modifier une fiche existante**. Charge `FicheEditor.tsx` avec les données récupérées (via `id` dans l’URL par exemple).                                |
+| **PreviewFichePage.tsx** | 🆕 Page de **prévisualisation de la fiche** : version lue par un enseignant ou exportable (PDF, Word). Peut offrir une version simplifiée "élève".                    |
+
+📁src/data/
+| Fichier                     | Fonction                                                                                                                                                                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pedagogicalStructure.ts** | 🆕 Contient ou charge la **structure hiérarchique pédagogique** : niveau → option → unité → chapitre → objectifs. Sert de base à la navigation dans `ObjectivesSelector`, `EntityQuickLinks`, etc. Peut être statique ou connecté à Supabase. |
+📁 src/styles/
+| Fichier                  | Fonction                                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **planipeda-styles.css** | ✅ Fichier de styles spécifiques au module `Planipeda`. Contient classes personnalisées pour la mise en page, les couleurs, les composants spécifiques au scénario pédagogique. |
+✅ Résumé des responsabilités
+| Fonctionalité               | Emplacement                                                  |
+| --------------------------- | ------------------------------------------------------------ |
+| Liste et gestion des fiches | `PlanningTable.tsx`, `FichePedagogiqueCard.tsx`              |
+| Création/édition de fiche   | `FicheEditor.tsx` + pages `CreateFichePage`, `EditFichePage` |
+| Construction des séquences  | `SequenceEditor.tsx`                                         |
+| Création d'activités        | `ActivityEditor.tsx`                                         |
+| Ajout d’évaluations         | `EvaluationEditor.tsx`                                       |
+| Sélection des objectifs     | `ObjectivesSelector.tsx`                                     |
+| Gestion des ressources      | `ResourceLibrary.tsx`                                        |
+| Aperçu final / export       | `PreviewFichePage.tsx`                                       |

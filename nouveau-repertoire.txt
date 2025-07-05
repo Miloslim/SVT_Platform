@@ -1,0 +1,23 @@
+src/
+ └── components/
+      ├── common/                     # Composants et hooks communs
+      │     ├── hooks/                # Hooks personnalisés
+      │     │    └── useStudentsData.ts    # Gestion des données des élèves
+      │     ├── SearchAndFilter.tsx   # Barre de recherche et filtres
+      │     ├── StudentList.tsx       # Affichage d'une liste d'élèves
+      │     └── TableWrapper.tsx      # Composant pour les tableaux génériques
+      ├── comp_gest_class/            # Sous-modules spécifiques
+      │     ├── GestionEleve.tsx      # Gestion des élèves
+      │     ├── GestionNotes.tsx      # Gestion des notes
+      │     ├── ImportStudents.tsx    # Importation d'élèves
+      │     ├── NoteModal.tsx         # Modale pour saisir les notes
+      │     ├── ScoresModal.tsx       # Modale pour gérer les scores
+      │     ├── StudentForm.tsx       # Formulaire d'ajout ou modification d'élèves
+      │     ├── StudentProfile.tsx    # Profil d'élève
+      │     ├── StudentTracking.tsx   # Suivi des élèves
+      │     └── StudentView.tsx       # Affichage individuel d'élèves
+ └── context/                         # Context React (global states)
+      ├── StudentsContext.tsx         # Gestion des états et données partagées
+ └── backend/
+      ├── config/                     # Configuration backend
+      │     └── supabase.ts           # Client Supabase

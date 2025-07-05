@@ -1,0 +1,76 @@
+// ============================================================
+// Titre : EditSequenceEditorPage
+// Chemin : src/components/planipeda/pages/EditSequenceEditorPage.tsx
+// Fonctionnalités :
+//   - Récupère l'ID de la séquence à éditer depuis les paramètres d'URL (via React Router `useParams`).
+//   - Valide la présence et le format de l'ID.
+//   - Affiche un message d'erreur si l'ID est invalide ou manquant.
+//   - Passe l'ID de la séquence au composant `EditSequenceEditor` pour l'édition réelle.
+//   - Fournit les fonctions de navigation (`onCancel`, `onSequenceUpdated`) au composant enfant.
+// ============================================================
+
+// === Importations des bibliothèques externes ===
+// CORRECTION ICI : Ajout de useCallback à l'import de React
+import React, { useCallback } from 'react';
+import { useParams, useNavigate } from 'react-router-dom'; // Hooks de React Router
+
+// === Importations des composants internes ===
+import EditSequenceEditor from '../ScenarioEditor/EditSequenceEditor'; // Le composant d'édition principal
+
+//Composant `EditSequenceEditorPage`
+
+//Ce composant est la page qui rend le formulaire d'édition de séquence.
+
+const EditSequenceEditorPage: React.FC = () => {
+    // 🎯 Fonctionnalité : Utiliser `useNavigate` pour la redirection après annulation ou succès.
+    const navigate = useNavigate();
+
+    // 🎯 Fonctionnalité : Récupérer l'ID de la séquence depuis les paramètres d'URL.
+    // La route dans App.tsx est définie avec `:id` pour l'édition de séquence.
+    const { id } = useParams<{ id: string }>(); // On récupère 'id' de l'URL
+
+    // 🎯 Fonctionnalité : Convertir l'ID de la chaîne de caractères en nombre entier.
+    // S'assure que l'ID est un nombre valide. Si 'id' est manquant ou non convertible,
+    // `parsedSequenceId` sera `undefined`.
+    const parsedSequenceId = id ? parseInt(id, 10) : undefined;
+
+    // 🎯 Fonctionnalité : Gérer les cas où l'ID est invalide ou manquant.
+    // Affiche un message d'erreur clair si l'URL ne fournit pas un ID de séquence valide.
+    if (!parsedSequenceId) {
+        return (
+            <div className="flex flex-col justify-center items-center h-screen text-lg text-red-600">
+                <p>Erreur: ID de séquence invalide ou manquant dans l'URL.</p>
+                <button onClick={() => navigate('/planipeda/sequences')} className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mt-4">
+                    Retour aux Séquences
+                </button>
+            </div>
+        );
+    }
+
+    // 🎯 Fonctionnalité : Définir la logique d'annulation de l'édition.
+    // Redirige l'utilisateur vers la page de liste des séquences.
+    const handleCancel = useCallback(() => {
+        navigate('/planipeda/sequences');
+    }, [navigate]);
+
+    // 🎯 Fonctionnalité : Définir la logique après une mise à jour réussie de la séquence.
+    // Redirige l'utilisateur vers la page de liste des séquences.
+    const handleSequenceUpdated = useCallback(() => {
+        navigate('/planipeda/sequences');
+    }, [navigate]);
+
+    // 🎯 Rendu : Affiche le titre de la page et le composant `EditSequenceEditor`.
+    // Le `parsedSequenceId` est passé comme prop au composant enfant.
+    return (
+        <div className="p-6">
+            <h1 className="text-3xl font-bold mb-6 text-gray-900">Modifier la Séquence</h1>
+            <EditSequenceEditor
+                sequenceId={parsedSequenceId}
+                onCancel={handleCancel}
+                onSequenceUpdated={handleSequenceUpdated}
+            />
+        </div>
+    );
+};
+
+export default EditSequenceEditorPage;

@@ -1,0 +1,38 @@
+5. Arborescence des Dossiers et Fichiers
+Voici une proposition d'organisation des fichiers pour intégrer ces nouvelles fonctionnalités, en s'appuyant sur les principes de la modularité et de la séparation des préoccupations :
+
+src/
+├── backend/                  # Dossier pour la logique côté serveur (API, services)
+│   ├── api/
+│   │   ├── documentRoutes.ts # NOUVEAU : Routes API pour la génération de documents (ex: /api/activities/:id/recap.pdf)
+│   │   └── ...               # Vos routes API existantes
+│   ├── services/
+│   │   ├── documentService.ts# NOUVEAU : Logique de génération de documents (appel aux bibliothèques comme Puppeteer/docx)
+│   │   └── ...               # Vos services backend existants
+│   └── config/
+│       └── supabase.ts       # Configuration Supabase
+├── components/               # Composants React
+│   ├── activities/
+│   │   ├── EditActivityEditor.tsx  # Composant existant pour l'édition
+│   │   ├── ActivityDetailView.tsx  # MODIFIÉ : Ajouter les boutons d'exportation ici
+│   │   └── ...                     # Autres composants liés aux activités
+│   ├── common/
+│   │   └── ExportOptionsDropdown.tsx # NOUVEAU (Optionnel) : Composant réutilisable pour un menu de sélection d'exportation
+│   ├── planipeda/
+│   │   └── ScenarioEditor/
+│   │       ├── CreateActivityEditor.tsx # Composant de formulaire générique existant
+│   │       ├── HierarchicalSelector.tsx
+│   │       └── MultiFileUpload.tsx
+│   └── ...                   # Autres dossiers de composants
+├── documentTemplates/        # NOUVEAU DOSSIER : Contient les définitions des vues pour l'exportation
+│   ├── ActivityRecapTemplate.html  # Template HTML/CSS pour la Vue 1 (Tableau Récapitulatif)
+│   ├── ActivityScenarioTemplate.html # Template HTML/CSS pour la Vue 2 (Scénario Pédagogique Détaillé)
+│   └── styles/
+│       ├── documentBase.css          # Styles CSS de base pour tous les documents exportés
+│       └── printSpecific.css         # Styles CSS spécifiques pour l'impression (@media print)
+├── types/                    # Définitions des types (interfaces)
+│   └── activity.ts           # Interface `ActivityData` partagée
+├── utils/                    # Fonctions utilitaires diverses
+│   └── activityDocumentGenerator.ts # NOUVEAU : Logique côté client pour initier l'exportation et formater les données pour les templates
+├── App.tsx                   # Composant racine de l'application
+└── index.tsx                 # Point d'entrée de l'application

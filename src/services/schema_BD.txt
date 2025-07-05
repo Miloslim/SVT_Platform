@@ -1,0 +1,1542 @@
+[
+  {
+    "json_agg": [
+      {
+        "name": "activite_objectifs",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('activite_objectifs_id_seq'::regclass)"
+          },
+          {
+            "column_name": "activite_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "objectif_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_activite",
+            "foreign_column": "activite_id",
+            "primary_table": "activites",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "activites",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('activites_id_seq'::regclass)"
+          },
+          {
+            "column_name": "chapitre_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "titre_activite",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "role_enseignant",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "materiel",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "duree_minutes",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "modalite_deroulement",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "modalite_evaluation",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "commentaires",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "created_at",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          },
+          {
+            "column_name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          },
+          {
+            "column_name": "ressource_urls",
+            "data_type": "ARRAY",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "capacites_habiletes",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('capacites_habiletes_id_seq'::regclass)"
+          },
+          {
+            "column_name": "titre_capacite_habilete",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "type",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": null
+      },
+      {
+        "name": "chapitres",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('chapitres_id_seq'::regclass)"
+          },
+          {
+            "column_name": "unite_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "titre_chapitre",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "chapitres_unite_id_fkey",
+            "foreign_column": "unite_id",
+            "primary_table": "unites",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "classes",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('classes_id_seq'::regclass)"
+          },
+          {
+            "column_name": "class_name",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": null
+      },
+      {
+        "name": "competences",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('competences_id_seq'::regclass)"
+          },
+          {
+            "column_name": "unite_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "titre_competence",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description_competence",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "type_competence",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "competences_unite_id_fkey",
+            "foreign_column": "unite_id",
+            "primary_table": "unites",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "connaissances",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('connaissances_id_seq'::regclass)"
+          },
+          {
+            "column_name": "chapitre_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "titre_connaissance",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description_connaissance",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "connaissances_chapitre_id_fkey",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluation_capacite_habilete",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('evaluation_capacite_habilete_id_seq'::regclass)"
+          },
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "capacite_habilete_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "resultat",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "evaluation_capacite_habilete_capacite_habilete_id_fkey",
+            "foreign_column": "capacite_habilete_id",
+            "primary_table": "capacites_habiletes",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "evaluation_capacite_habilete_evaluation_id_fkey",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluation_competences",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('evaluation_competences_id_seq'::regclass)"
+          },
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "competence_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "resultat",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "evaluation_competences_competence_id_fkey",
+            "foreign_column": "competence_id",
+            "primary_table": "competences",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "evaluation_competences_evaluation_id_fkey",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluation_connaissances",
+        "columns": [
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "connaissance_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "evaluation_connaissances_connaissance_id_fkey",
+            "foreign_column": "connaissance_id",
+            "primary_table": "connaissances",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "evaluation_connaissances_evaluation_id_fkey",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluation_content_blocks",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('evaluation_content_blocks_id_seq'::regclass)"
+          },
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "block_order",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "block_type",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "text_content_html",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "questions_html",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "media_url",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "media_alt_text",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "media_position",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_eval_content_eval",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluation_modalites",
+        "columns": [
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "modalite_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_eval_mod_eval",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_eval_mod_mod",
+            "foreign_column": "modalite_id",
+            "primary_table": "modalites",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluation_objectifs",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('evaluation_objectifs_id_seq'::regclass)"
+          },
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "objectif_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_evaluation",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_objectif",
+            "foreign_column": "objectif_id",
+            "primary_table": "objectifs",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "evaluations",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('evaluations_id_seq'::regclass)"
+          },
+          {
+            "column_name": "titre_evaluation",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "date_creation",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          },
+          {
+            "column_name": "chapitre_id",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "sequence_id",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "activite_id",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "ressource_urls",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "type_evaluation",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "grille_correction",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "date_mise_a_jour",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          },
+          {
+            "column_name": "introduction_activite",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "consignes_specifiques",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "ressource_urls_json",
+            "data_type": "jsonb",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "ressources_eleve_urls",
+            "data_type": "jsonb",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "modalite_evaluation_autre_texte",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "evaluation_sequence_id_fkey",
+            "foreign_column": "sequence_id",
+            "primary_table": "sequences",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "evaluations_chapitre_id_fkey",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "fiches",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('fiche_id_seq'::regclass)"
+          },
+          {
+            "column_name": "chapitre_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "titre_fiche",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "date_creation",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          },
+          {
+            "column_name": "statut",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "created_by",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "updated_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "lycee_classes",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('lycee_classes_id_seq'::regclass)"
+          },
+          {
+            "column_name": "niveau_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "option_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "nom_classe",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "lycee_classes_niveau_id_fkey",
+            "foreign_column": "niveau_id",
+            "primary_table": "niveaux",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "lycee_classes_option_id_fkey",
+            "foreign_column": "option_id",
+            "primary_table": "options",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "modalites",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('modalites_id_seq'::regclass)"
+          },
+          {
+            "column_name": "nom",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": null
+      },
+      {
+        "name": "niveaux",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('lycee_niveaux_id_seq'::regclass)"
+          },
+          {
+            "column_name": "nom_niveau",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": null
+      },
+      {
+        "name": "objectifs",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('objectifs_id_seq'::regclass)"
+          },
+          {
+            "column_name": "chapitre_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "objectif_type",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "description_objectif",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "objectifs_chapitre_id_fkey",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('lycee_options_id_seq'::regclass)"
+          },
+          {
+            "column_name": "niveau_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "nom_option",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "lycee_options_niveau_id_fkey",
+            "foreign_column": "niveau_id",
+            "primary_table": "niveaux",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "sequence_activite",
+        "columns": [
+          {
+            "column_name": "sequence_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "activite_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "ordre",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "date_ajout",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_activite_generique",
+            "foreign_column": "activite_id",
+            "primary_table": "activites",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_sequence_activite",
+            "foreign_column": "sequence_id",
+            "primary_table": "sequences",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "sequence_activite_activite_id_fkey",
+            "foreign_column": "activite_id",
+            "primary_table": "activites",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "sequence_evaluation",
+        "columns": [
+          {
+            "column_name": "sequence_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "evaluation_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "ordre",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "date_ajout",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_sequence_evaluation",
+            "foreign_column": "sequence_id",
+            "primary_table": "sequences",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "sequence_evaluation_evaluation_id_fkey",
+            "foreign_column": "evaluation_id",
+            "primary_table": "evaluations",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "sequences",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('sequences_id_seq'::regclass)"
+          },
+          {
+            "column_name": "chapitre_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "titre_sequence",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "created_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          },
+          {
+            "column_name": "description",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "ordre",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "duree_estimee",
+            "data_type": "real",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "statut",
+            "data_type": "character varying",
+            "is_nullable": "YES",
+            "column_default": "'brouillon'::character varying"
+          },
+          {
+            "column_name": "objectifs_specifiques",
+            "data_type": "jsonb",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "prerequis",
+            "data_type": "jsonb",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "date_modification",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "created_by",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "ordre_dans_chapitre",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre_id",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "sequences_chapitre_id_fkey",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          },
+          {
+            "constraint_name": "fk_chapitre",
+            "foreign_column": "chapitre_id",
+            "primary_table": "chapitres",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "student_absences",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('student_absences_id_seq'::regclass)"
+          },
+          {
+            "column_name": "student_code",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "date",
+            "data_type": "date",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "hours",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "created_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "student_absences_student_code_fkey",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          }
+        ]
+      },
+      {
+        "name": "student_progress",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "uuid",
+            "is_nullable": "NO",
+            "column_default": "gen_random_uuid()"
+          },
+          {
+            "column_name": "student_code",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "absences",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": "0"
+          },
+          {
+            "column_name": "assiduity_rate",
+            "data_type": "double precision",
+            "is_nullable": "YES",
+            "column_default": "0"
+          },
+          {
+            "column_name": "workbook",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": "0"
+          },
+          {
+            "column_name": "extra_activities",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "observations",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "created_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          },
+          {
+            "column_name": "updated_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          },
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          },
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          },
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          }
+        ]
+      },
+      {
+        "name": "student_scores",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "uuid",
+            "is_nullable": "NO",
+            "column_default": "gen_random_uuid()"
+          },
+          {
+            "column_name": "student_code",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "cc1",
+            "data_type": "numeric",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "cc2",
+            "data_type": "numeric",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "cc3",
+            "data_type": "numeric",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "c_act",
+            "data_type": "numeric",
+            "is_nullable": "YES",
+            "column_default": null
+          },
+          {
+            "column_name": "created_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          },
+          {
+            "column_name": "updated_at",
+            "data_type": "timestamp without time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          },
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          },
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          },
+          {
+            "constraint_name": "fk_student_code",
+            "foreign_column": "student_code",
+            "primary_table": "students",
+            "primary_column": "student_code"
+          }
+        ]
+      },
+      {
+        "name": "students",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "uuid",
+            "is_nullable": "NO",
+            "column_default": "gen_random_uuid()"
+          },
+          {
+            "column_name": "student_code",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "first_name",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "last_name",
+            "data_type": "text",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "birth_date",
+            "data_type": "date",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "student_class",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "created_at",
+            "data_type": "timestamp with time zone",
+            "is_nullable": "YES",
+            "column_default": "now()"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "fk_student_class",
+            "foreign_column": "student_class",
+            "primary_table": "classes",
+            "primary_column": "id"
+          }
+        ]
+      },
+      {
+        "name": "unites",
+        "columns": [
+          {
+            "column_name": "id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "column_default": "nextval('unites_id_seq'::regclass)"
+          },
+          {
+            "column_name": "titre_unite",
+            "data_type": "character varying",
+            "is_nullable": "NO",
+            "column_default": null
+          },
+          {
+            "column_name": "option_id",
+            "data_type": "integer",
+            "is_nullable": "YES",
+            "column_default": null
+          }
+        ],
+        "foreign_keys": [
+          {
+            "constraint_name": "unites_option_id_fkey",
+            "foreign_column": "option_id",
+            "primary_table": "options",
+            "primary_column": "id"
+          }
+        ]
+      }
+    ]
+  }
+]

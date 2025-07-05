@@ -1,0 +1,45 @@
+/* ============================================================
+   📌 Fichier : global.css
+   🎯 Objectif :
+   - Définir des styles globaux pour toute l'application.
+   - Standardiser les éléments HTML principaux.
+============================================================ */
+
+/* === Style général pour le corps === */
+body {
+  font-family: 'Inter', sans-serif; /* Police principale */
+  background-color: #f9fafb; /* Couleur de fond claire */
+  color: #111827; /* Couleur du texte principal */
+  margin: 0; /* Supprimer les marges par défaut */
+  padding: 0; /* Supprimer les paddings par défaut */
+  line-height: 1.5; /* Amélioration de la lisibilité */
+}
+
+/* === Liens === */
+a {
+  text-decoration: none; /* Supprimer les soulignements par défaut */
+  color: inherit; /* Hériter de la couleur du texte environnant */
+}
+
+/* === Titres === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; /* Mettre les titres en gras */
+  margin: 0; /* Supprimer les marges par défaut */
+}
+
+/* === Boutons === */
+button {
+  font-family: inherit; /* Harmonisation de la typographie */
+  cursor: pointer; /* Indicateur utilisateur sur hover */
+}
+
+/* === Entrées et zones de texte === */
+input, textarea {
+  font-family: inherit; /* Typographie cohérente */
+}
+
+/* === Éléments de base === */
+ul, ol, p {
+  margin: 0; /* Supprimer les marges par défaut */
+  padding: 0; /* Supprimer les paddings par défaut */
+}

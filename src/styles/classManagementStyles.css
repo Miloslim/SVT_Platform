@@ -1,0 +1,321 @@
+/* ============================================================================
+📄 Fichier : classManagementStyles.css
+📁 Chemin : src/styles/classManagementStyles.css
+🎯 Objectif : Styles centralisés pour le module ClassManagement
+=========================================================================== */
+
+/* === 🧱 Conteneur principal === */
+.cm-container {
+  @apply p-6 bg-gray-100 min-h-screen;
+}
+
+/* === 🧾 Titre principal === */
+.cm-title {
+  @apply text-2xl font-bold mb-4;
+}
+
+/* === 📍 Navigation entre modules === */
+.cm-navigation {
+  @apply flex gap-4 mb-6;
+}
+
+/* === 🔘 Boutons de navigation === */
+.cm-button {
+  @apply px-4 py-2 rounded transition;
+}
+
+.cm-button-active {
+  @apply bg-blue-500 text-white;
+}
+
+.cm-button-inactive {
+  @apply bg-gray-300;
+}
+
+/* === ⏳ Texte de chargement === */
+.cm-loading {
+  @apply text-center text-gray-500;
+}
+
+/* === 📦 Contenu dynamique du module === */
+.cm-module {
+  @apply bg-white p-4 rounded shadow;
+}
+
+/* ============================================================================
+🎯 Section : Styles pour GestionEleve.tsx
+=========================================================================== */
+
+/* Conteneur principal */
+.ge-container {
+  @apply p-6 bg-gray-100 rounded shadow-md;
+}
+
+/* Actions (boutons d'ajout et importation) */
+.ge-actions {
+  @apply mb-4 flex gap-4;
+}
+
+/* Style de base pour tous les boutons */
+.ge-button {
+  @apply px-4 py-2 rounded transition duration-200 text-white;
+}
+
+/* Bouton "ajouter un élève" */
+.ge-button-add {
+  @apply bg-blue-500 hover:bg-blue-600;
+}
+
+/* Bouton "importer des élèves" */
+.ge-button-import {
+  @apply bg-green-500 hover:bg-green-600;
+}
+
+/* Bouton "fermer" (pour les deux) */
+.ge-button-close {
+  @apply bg-red-500 hover:bg-red-600;
+}
+
+/* Conteneur des formulaires */
+.ge-form {
+  @apply mt-4;
+}
+
+/* Conteneur de la liste des élèves */
+.ge-student-list {
+  @apply mt-6;
+}
+
+/* ============================================================
+📄 Fichier : classManagementStyles.css
+🎯 Objectif :
+  - Regrouper les styles pour la gestion des élèves (StudentList).
+============================================================ */
+
+.student-list-container {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.student-list-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.toolbar-item {
+  flex: 1;
+}
+
+.toolbar-item label {
+  display: block;
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.toolbar-item input,
+.toolbar-item select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.student-table th,
+.student-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.student-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-save,
+.btn-cancel {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.btn-edit:hover {
+  color: #2563eb;
+}
+
+.btn-delete:hover {
+  color: #dc2626;
+}
+
+.btn-save:hover {
+  color: #16a34a;
+}
+
+.btn-cancel:hover {
+  color: #b91c1c;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+/* === Boutons d'action === */
+.action-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.action-btn.edit {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+.action-btn.edit:hover {
+  background-color: #bae6fd;
+}
+
+.action-btn.delete {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+.action-btn.delete:hover {
+  background-color: #fecaca;
+}
+
+.action-btn.save {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+.action-btn.save:hover {
+  background-color: #bbf7d0;
+}
+
+.action-btn.cancel {
+  background-color: #fef9c3;
+  color: #92400e;
+}
+.action-btn.cancel:hover {
+  background-color: #fef08a;
+}
+.action-btn.view {
+  background-color: #fef08a;
+}
+/* === Container principal du suivi === */
+.tracking-container {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* === Titre principal === */
+.tracking-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* === Filtres === */
+.tracking-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tracking-input,
+.tracking-select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  flex: 1;
+}
+
+/* === Tableau === */
+.tracking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.tracking-table th,
+.tracking-table td {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+/* === Indicateur visuel d'absence === */
+.absence-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.absence-bar {
+  height: 8px;
+  width: 60px;
+  border-radius: 9999px;
+}
+
+.bg-green {
+  background-color: #4ade80;
+}
+.bg-yellow {
+  background-color: #facc15;
+}
+.bg-red {
+  background-color: #f87171;
+}
+
+/* === Bouton Gérer Absence === */
+.absence-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.375rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.absence-btn:hover {
+  background-color: #2563eb;
+}
+

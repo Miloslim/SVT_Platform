@@ -1,0 +1,45 @@
+src/
+ └── components/
+      └── planipeda/
+           ├── Editor/
+           │    ├── SequenceEditor.tsx
+           │    ├── ActivityEditor.tsx
+           │    └── EvaluationEditor.tsx
+           ├── DocumentGenerator.tsx
+           ├── Library.tsx       // Ressources partagées
+           └── Timeline.tsx      // Visualisation temporelle
+=====================================================================
+components/
+└── planipeda/
+    ├── NiveauOptionSelector.tsx
+    ├── UniteList.tsx
+    ├── ChapitreList.tsx
+    ├── ObjectifEditor.tsx
+    ├── SequenceEditor.tsx
+    ├── ActiviteEditor.tsx
+    ├── CompetenceSelector.tsx
+================================ Nouvelle structure================
+src/
+├── components/
+│   ├── planipeda/
+│   │   ├── NiveauOptionSelector.tsx
+│   │   ├── Sequences/
+│   │   │   ├── Sequences.tsx
+│   │   │   ├── SequenceEditor.tsx
+│   │   │   ├── SequenceList.tsx
+│   │   │   ├── UnitList.tsx
+│   │   │   ├── ChapitreList.tsx
+│   │   │   ├── ActiviteList.tsx
+│   │   │   └── ObjectifList.tsx
+│   │   ├── Unites/
+│   │   │   ├── UniteEditor.tsx
+│   │   │   ├── UniteList.tsx
+│   │   └── Chapitres/
+│   │       ├── ChapitreEditor.tsx
+│   │       ├── ChapitreList.tsx
+│   │   └── Activites/
+│   │       ├── ActiviteEditor.tsx
+│   │       ├── ActiviteList.tsx
+│   │   └── Objectifs/
+│   │       ├── ObjectifEditor.tsx
+│   │       └── ObjectifList.tsx
